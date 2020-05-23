@@ -1,10 +1,12 @@
-extends Area2D
+extends KinematicBody2D
 
-export (int) var speed = 200
+export (int) var speed = 350
 
 var velocity = Vector2()
-
+signal move
+var is_moving = Input.is_action_pressed("down") or Input.is_action_pressed("up")or Input.is_action_pressed("left") or Input.is_action_pressed("right")
 func get_input():
+	
 	velocity = Vector2()
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
@@ -18,12 +20,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	move_and_slide(velocity)
+	if is_moving:
+		emit_signal("move")
 
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
