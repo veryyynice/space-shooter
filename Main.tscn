@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 24.8132
+height = 65.3216
+
+[node name="Node" type="Node"]
+
+[node name="player" type="Area2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2( 407.775, 236.414 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 71.48
+margin_top = -75.6705
+margin_right = 111.48
+margin_bottom = -35.6705
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="test" type="KinematicBody2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
