@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Demo.gd" type="Script" id=1]
 [ext_resource path="res://src/Effects/HitEffect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Main.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Turret/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Barricade/Barricade.tscn" type="PackedScene" id=6]
 
 [node name="Demo" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,16 +13,15 @@ hit_effect = ExtResource( 2 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 977.614, 770.489 )
+position = Vector2( 168.755, 554.642 )
 
 [node name="Turret" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 1696.63, 236.096 )
-
-[node name="Barricade" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 1780.41, 393.975 )
+position = Vector2( 573.976, 1024.48 )
 
 [node name="TileMap" type="TileMap" parent="YSort"]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
+collision_layer = 8
+collision_mask = 15
 format = 1
 [connection signal="fired_shot" from="YSort/Player" to="." method="_on_Player_fired_shot"]

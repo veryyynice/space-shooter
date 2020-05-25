@@ -9,7 +9,8 @@ signal fired_shot
 export var speed: = 500.0
 
 
-onready var pointer:= $Pointer
+onready var pointer:= $PlayerSprite
+onready var flame = $flame
 onready var ray:=$Pointer/RayCast2D
 
 
@@ -37,5 +38,6 @@ func move()->void:
 func rotate_pointer(point_direction: Vector2)->void:
 	var temp = rad2deg(atan2(point_direction.y, point_direction.x))
 	pointer.rotation_degrees = temp
+	flame.rotation_degrees = temp
 
 

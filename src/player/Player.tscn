@@ -42,21 +42,12 @@ self_modulate = Color( 0.85098, 0, 1, 1 )
 position = Vector2( 0, -16.3698 )
 shape = SubResource( 2 )
 
-[node name="Pointer" type="Node2D" parent="."]
-
-[node name="RayCast2D" type="RayCast2D" parent="Pointer"]
-enabled = true
-cast_to = Vector2( 800, 0 )
-collision_mask = 14
-collide_with_areas = true
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="flame" type="Node2D" parent="."]
 position = Vector2( -80.4331, 9.4893 )
 scale = Vector2( 1.46214, 1.46214 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Node2D"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="flame"]
 rotation = -1.57188
 scale = Vector2( 0.0657753, 0.0657753 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
